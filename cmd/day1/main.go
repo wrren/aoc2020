@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	fptr := flag.String("fpath", path.Join(os.Args[0], "../inputs/day1/input1"), "file path to read from")
+	fptr := flag.String("fpath", path.Join(os.Args[0], "../inputs/day1/input.txt"), "file path to read from")
 	tptr := flag.Int("target", 2020, "Target sum")
 	flag.Parse()
 
@@ -38,6 +38,7 @@ func main() {
 	m1, m2 := aoc.FindEntriesWithSum(entries, *tptr)
 
 	if m1 != len(entries) && m2 != len(entries) {
+		fmt.Println()
 		fmt.Println(m1, m2, m1*m2)
 	} else {
 		log.Fatalln("Failed to find entries summing to", *tptr)
